@@ -1,4 +1,6 @@
+import java.awt.Color;
 
-public class IzborBarve {
-	public int stopnja; 
+
+public interface IzborBarve {
+	public Color eval(float x, float y);
 }
