@@ -6,8 +6,7 @@ public class Test {
 	public static void main(String[] args) {
 		Color prva = Color.ORANGE;
 		Color druga = Color.BLUE;
-		Povprecje nova = new Povprecje((float) 0.5,prva,druga);
-		Color zmesana = nova.povprecje();
+		Color zmesana = Povprecje.povprecje(prva,druga,(float) 0.5);
 		System.out.println(prva);
 		System.out.println(druga);
 		System.out.println(zmesana);
