@@ -10,6 +10,9 @@ public class Test {
 		System.out.println(prva);
 		System.out.println(druga);
 		System.out.println(zmesana);
+		float ab = (float) 0.33;
+		Color ja = new Color(ab,ab,ab);
+		System.out.println(ja);
 
 	}
 
