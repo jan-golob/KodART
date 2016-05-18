@@ -10,7 +10,7 @@ public class Ordinata extends IzborBarve {
 
 	@Override
 	public Color eval(float x, float y) {
-		float n = y%256;
+		int n = (int) (y%255);
 		return new Color(n,n,n);
 	
 

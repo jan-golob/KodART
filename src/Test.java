@@ -1,18 +1,13 @@
 import java.awt.Color;
 
 import abstraktnost.Povprecje;
+import abstraktnost.PrviIzbor;
 
 public class Test {
 
 	public static void main(String[] args) {
-		Color prva = Color.ORANGE;
-		Color druga = Color.BLUE;
-		Color zmesana = Povprecje.povprecje(prva,druga,(float) 0.5);
-		System.out.println(prva);
-		System.out.println(druga);
-		System.out.println(zmesana);
-
-
+		PrviIzbor hahahaha = new PrviIzbor(2, 2);
+		System.out.print(hahahaha.eval(4, 3));
 	}
 
 }

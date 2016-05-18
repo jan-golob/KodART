@@ -6,7 +6,7 @@ public class Abscisa extends IzborBarve {
 
 	@Override
 	public Color eval(float x, float y) {
-		float n = x%256;
+		int n = (int) (x%255);
 		return new Color(n,n,n);
 	}
 

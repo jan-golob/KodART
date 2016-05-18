@@ -49,7 +49,7 @@ public abstract class IzborBarve {
 	
 	private IzborBarve nakBarva2(int kompleks) {
 		Random av = new Random();
-		int r = av.nextInt(7);
+		int r = av.nextInt(11);
 		IzborBarve barva = null;
 		if (r == 0) {
 			 barva = new Abscisa();
@@ -81,7 +81,9 @@ public abstract class IzborBarve {
 		if (r == 9) {
 			 barva = new Vodnjak(kompleks);
 		}
-		
+		if (r == 10) {
+			 barva = new Mesanje(kompleks);
+		}
 		return barva;
 	}
 }
