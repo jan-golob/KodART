@@ -4,8 +4,8 @@ import java.awt.Color;
 
 public class Produkt extends IzborBarve {
 
-	public Produkt() {
-		super(2);
+	public Produkt(int kompleksnost) {
+		super(2,kompleksnost-1);
 	}
 
 	@Override

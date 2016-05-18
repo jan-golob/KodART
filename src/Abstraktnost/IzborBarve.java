@@ -52,13 +52,13 @@ public abstract class IzborBarve {
 		int r = av.nextInt(7);
 		IzborBarve barva = null;
 		if (r == 0) {
-			 barva = new Abscisa(kompleks);
+			 barva = new Abscisa();
 		}
 		if (r == 1) {
-			barva = new Ordinata(kompleks);
+			barva = new Ordinata();
 		}
 		if (r == 2) {
-			barva = new Konstanta(kompleks);
+			barva = new Konstanta();
 		}
 		if (r == 3) {
 			 barva = new Vsota(kompleks);
