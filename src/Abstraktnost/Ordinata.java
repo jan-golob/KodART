@@ -5,7 +5,7 @@ import java.awt.Color;
 public class Ordinata extends IzborBarve {
 
 	public Ordinata() {
-		super(0);
+		super();
 	}
 
 	@Override

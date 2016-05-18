@@ -4,8 +4,8 @@ import java.awt.Color;
 
 public class Vsota extends IzborBarve {
 
-	public Vsota() {
-		super(2);
+	public Vsota(int komp) {
+		super(2, komp-1);
 	}
 
 	@Override

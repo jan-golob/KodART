@@ -11,7 +11,7 @@ public class Abscisa extends IzborBarve {
 	}
 
 	public Abscisa() {
-		super(0);
+		super();
 	}
 
 }
