@@ -1,4 +1,4 @@
-package Abstraktnost;
+package abstraktnost;
 
 import java.awt.Color;
 

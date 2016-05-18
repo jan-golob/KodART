@@ -1,5 +1,6 @@
 import java.awt.Color;
-import Abstraktnost.Povprecje;;
+
+import abstraktnost.Povprecje;
 
 public class Test {
 
