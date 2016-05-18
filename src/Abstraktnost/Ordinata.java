@@ -2,9 +2,9 @@ package Abstraktnost;
 import java.awt.Color;
 
 
-public class ordinata extends IzborBarve {
+public class Ordinata extends IzborBarve {
 
-	public ordinata() {
+	public Ordinata() {
 		super(0);
 	}
 
