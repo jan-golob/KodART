@@ -4,8 +4,8 @@ import java.awt.Color;
 
 public class Mesanje extends IzborBarve {
 
-	public Mesanje() {
-		super(3);
+	public Mesanje(int kompleksnost) {
+		super(3, kompleksnost-1);
 	}
 
 	@Override

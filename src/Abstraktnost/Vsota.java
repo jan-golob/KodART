@@ -4,8 +4,8 @@ import java.awt.Color;
 
 public class Vsota extends IzborBarve {
 
-	public Vsota(int komp) {
-		super(2, komp-1);
+	public Vsota(int kompleksnost) {
+		super(2, kompleksnost-1);
 	}
 
 	@Override

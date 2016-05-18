@@ -8,8 +8,8 @@ public class Level extends IzborBarve {
 	private float g;
 	private float b;
 
-	public Level() {
-		super(3);
+	public Level(int kompleksnost) {
+		super(3, kompleksnost-1);
 	}
 
 	@Override
