@@ -24,11 +24,11 @@ public class Sinus extends IzborBarve {
 	}
 	@Override
 	public Color eval(float x, float y) {
-		return new Color(
-				(float) Math.sin(faza + frekvenca*(this.podizbori[0].eval(x,y).getRed())),
-				(float) Math.sin(faza + frekvenca*(this.podizbori[0].eval(x,y).getGreen())),
-				(float) Math.sin(faza + frekvenca*(this.podizbori[0].eval(x,y).getBlue()))
-				);
+		float r =(float) (Math.sin(faza + frekvenca*(this.podizbori[0].eval(x,y).getRed()))+1)/2;
+		float g = (float) (Math.sin(faza + frekvenca*(this.podizbori[0].eval(x,y).getGreen()))+1)/2;
+		float b = (float) (Math.sin(faza + frekvenca*(this.podizbori[0].eval(x,y).getBlue()))+1)/2;
+		System.out.println("sinus: "+r +"," + g +","+b);
+		return new Color(r,g,b);
 	}
 
 }

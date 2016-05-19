@@ -12,9 +12,10 @@ public class Modul extends IzborBarve {
 	public Color eval(float x, float y) {
 	Color c0 = this.podizbori[0].eval(x, y);
 	Color c1 = this.podizbori[1].eval(x, y);
-	float r = (float) (c0.getRed()%((c1.getRed()+1)/1.004));
-	float g = (float) (c0.getGreen()%((c1.getGreen()+1)/1.004));
-	float b = (float) (c0.getBlue()%((c1.getBlue()+1)/1.004));
+	int r = (int) (c0.getRed()%((c1.getRed()+1)/1.004));
+	int g = (int) (c0.getGreen()%((c1.getGreen()+1)/1.004));
+	int b = (int) (c0.getBlue()%((c1.getBlue()+1)/1.004));
+	System.out.println("modul: "+r +"," + g +","+b);
 	return new Color(r, g, b);
 	}
 

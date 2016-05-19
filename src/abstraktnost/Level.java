@@ -4,9 +4,9 @@ import java.awt.Color;
 import java.util.Random;
 
 public class Level extends IzborBarve {
-	private float r;
-	private float g;
-	private float b;
+	private int r;
+	private int g;
+	private int b;
 
 	public Level(int kompleksnost) {
 		super(3, kompleksnost-1);
@@ -40,6 +40,7 @@ public class Level extends IzborBarve {
 		else{
 			r = c2.getBlue();
 		}
+		System.out.println("level: "+r +"," + g +","+b);
 		return new Color(r, g, b);
 	}
 

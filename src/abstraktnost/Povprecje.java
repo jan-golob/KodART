@@ -18,8 +18,11 @@ public class Povprecje {
 		
 		float[] druga_barva = new float[4];
 		barva2.getRGBComponents(druga_barva);
-		
-		Color nova = new Color(utez*prva_barva[0] + (1-utez)*druga_barva[0], utez*prva_barva[1] + (1-utez)*druga_barva[1], utez*prva_barva[2] + (1-utez)*druga_barva[2]);
+		float r =utez*prva_barva[0] + (1-utez)*druga_barva[0];
+		float g = utez*prva_barva[1] + (1-utez)*druga_barva[1];
+		float b =  utez*prva_barva[2] + (1-utez)*druga_barva[2];
+		System.out.println("povprecje: "+r +"," + g +","+b);
+		Color nova = new Color(r,g,b);
 		
 		return nova;
 		

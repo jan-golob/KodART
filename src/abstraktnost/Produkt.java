@@ -12,9 +12,10 @@ public class Produkt extends IzborBarve {
 	public Color eval(float x, float y) {
 		Color c0 = this.podizbori[0].eval(x, y);
 		Color c1 = this.podizbori[1].eval(x, y);
-		float r = c0.getRed()*c1.getRed();
-		float g = c0.getGreen()*c1.getGreen();
-		float b = c0.getBlue()*c1.getBlue();
+		int r = c0.getRed()*c1.getRed() %256;
+		int g = c0.getGreen()*c1.getGreen()%256;
+		int b = c0.getBlue()*c1.getBlue()%256;
+		System.out.println("produkt: "+r +"," + g +","+b);
 		return new Color(r, g, b);
 	}
 

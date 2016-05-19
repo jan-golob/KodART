@@ -9,13 +9,17 @@ public class Vodnjak extends IzborBarve {
 	}
 	
 	private float vodnak(float x){
-		return (float) (1 - 2 / Math.pow((1 + x*x),8));
+		return Math.abs((float) (1 - 2 / Math.pow((1 + x*x),8)));
 		
 	}
 
 	@Override
 	public Color eval(float x, float y) {
-		return new Color(vodnak(this.podizbori[0].eval(x,y).getRed()),vodnak(this.podizbori[0].eval(x,y).getGreen()),vodnak(this.podizbori[0].eval(x,y).getBlue()));
+		float r = vodnak(this.podizbori[0].eval(x,y).getRed());
+		float g = vodnak(this.podizbori[0].eval(x,y).getGreen());
+		float b = vodnak(this.podizbori[0].eval(x,y).getBlue());
+		System.out.println("vodnak: "+r +"," + g +","+b);
+		return new Color(r,g,b);
 	}
 
 }

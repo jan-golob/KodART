@@ -9,12 +9,16 @@ public class Sotor extends IzborBarve {
 	}
 	
 	private float sotor(float x){
-		return 1 - 2 * Math.abs(x);
+		return Math.abs(1 - 2 * Math.abs(x/256));
 	}
 
 	@Override
 	public Color eval(float x, float y) {
-		return new Color(sotor(this.podizbori[0].eval(x,y).getRed()),sotor(this.podizbori[0].eval(x,y).getGreen()),sotor(this.podizbori[0].eval(x,y).getBlue()));
+		float r = sotor(this.podizbori[0].eval(x,y).getRed());
+		float g = sotor(this.podizbori[0].eval(x,y).getGreen());
+		float b = sotor(this.podizbori[0].eval(x,y).getBlue());
+		System.out.println("sotor: "+r +"," + g +","+b);
+		return new Color(r,g,b);
 	}
 
 }
