@@ -17,7 +17,6 @@ public class Sotor extends IzborBarve {
 		float r = sotor(this.podizbori[0].eval(x,y).getRed());
 		float g = sotor(this.podizbori[0].eval(x,y).getGreen());
 		float b = sotor(this.podizbori[0].eval(x,y).getBlue());
-		System.out.println("sotor: "+r +"," + g +","+b);
 		return new Color(r,g,b);
 	}
 

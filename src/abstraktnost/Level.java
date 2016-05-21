@@ -40,7 +40,6 @@ public class Level extends IzborBarve {
 		else{
 			r = c2.getBlue();
 		}
-		System.out.println("level: "+r +"," + g +","+b);
 		return new Color(r, g, b);
 	}
 

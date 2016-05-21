@@ -1,7 +1,6 @@
 package abstraktnost;
 
 import java.awt.Color;
-import java.util.Iterator;
 import java.util.Random;
 
 public class PrviIzbor extends IzborBarve {

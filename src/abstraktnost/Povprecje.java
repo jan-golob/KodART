@@ -21,7 +21,6 @@ public class Povprecje {
 		float r =utez*prva_barva[0] + (1-utez)*druga_barva[0];
 		float g = utez*prva_barva[1] + (1-utez)*druga_barva[1];
 		float b =  utez*prva_barva[2] + (1-utez)*druga_barva[2];
-		System.out.println("povprecje: "+r +"," + g +","+b);
 		Color nova = new Color(r,g,b);
 		
 		return nova;

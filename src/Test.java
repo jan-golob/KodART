@@ -1,13 +1,11 @@
-import java.awt.Color;
-
-import abstraktnost.Povprecje;
-import abstraktnost.PrviIzbor;
+import gui.GlavnoOkno;
 
 public class Test {
 
 	public static void main(String[] args) {
-		PrviIzbor hahahaha = new PrviIzbor(150, 20);
-		System.out.print(hahahaha.eval(4, 3));
+		GlavnoOkno okno = new GlavnoOkno();
+		okno.pack();
+		okno.setVisible(true);
 	}
 
 }

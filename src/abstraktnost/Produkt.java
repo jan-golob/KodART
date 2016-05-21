@@ -15,7 +15,6 @@ public class Produkt extends IzborBarve {
 		int r = c0.getRed()*c1.getRed() %256;
 		int g = c0.getGreen()*c1.getGreen()%256;
 		int b = c0.getBlue()*c1.getBlue()%256;
-		System.out.println("produkt: "+r +"," + g +","+b);
 		return new Color(r, g, b);
 	}
 

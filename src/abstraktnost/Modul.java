@@ -15,7 +15,6 @@ public class Modul extends IzborBarve {
 	int r = (int) (c0.getRed()%((c1.getRed()+1)/1.004));
 	int g = (int) (c0.getGreen()%((c1.getGreen()+1)/1.004));
 	int b = (int) (c0.getBlue()%((c1.getBlue()+1)/1.004));
-	System.out.println("modul: "+r +"," + g +","+b);
 	return new Color(r, g, b);
 	}
 

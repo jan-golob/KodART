@@ -18,7 +18,6 @@ public class Vodnjak extends IzborBarve {
 		float r = vodnak(this.podizbori[0].eval(x,y).getRed());
 		float g = vodnak(this.podizbori[0].eval(x,y).getGreen());
 		float b = vodnak(this.podizbori[0].eval(x,y).getBlue());
-		System.out.println("vodnak: "+r +"," + g +","+b);
 		return new Color(r,g,b);
 	}
 

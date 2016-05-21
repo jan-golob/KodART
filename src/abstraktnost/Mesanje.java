@@ -13,7 +13,6 @@ public class Mesanje extends IzborBarve {
 		float utez = (float) (0.5 * (this.podizbori[0].eval(x,y).getRed()/256 + 1.0));
 		Color prva =this.podizbori[1].eval(x, y);
 		Color druga =this.podizbori[2].eval(x, y);
-		System.out.println("mesanje: "+prva +"," + druga +","+utez);
 		return Povprecje.povprecje(prva, druga, utez);
 	}
 
