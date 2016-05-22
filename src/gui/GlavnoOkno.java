@@ -1,24 +1,23 @@
 package gui;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import abstraktnost.PrviIzbor;
 
-import java.awt.GridBagLayout;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import javax.swing.JButton;
-import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 @SuppressWarnings("serial")
 public class GlavnoOkno extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
-	private JPanel panel;
+	private Platno platno;
 	
 	PrviIzbor izbirabarve = new PrviIzbor(5, 3);
 
@@ -38,14 +37,15 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		gbl_contentPane.rowWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
-		panel = new JPanel();
+		
+		platno = new Platno(this);
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;
 		gbc_panel.gridy = 0;
-		panel.setBackground(izbirabarve.eval(4, 3));
-		contentPane.add(panel, gbc_panel);
+		platno.setBackground(izbirabarve.eval(4, 3));
+		contentPane.add(platno, gbc_panel);
 		
 		JButton btnNovo = new JButton("Novo risanje");
 		GridBagConstraints gbc_btnNovo = new GridBagConstraints();
@@ -54,17 +54,12 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		btnNovo.addActionListener(this);
 		contentPane.add(btnNovo, gbc_btnNovo);
 	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-			izbirabarve = new PrviIzbor(5,3);
-			panel.setBackground(izbirabarve.eval(4, 3));
+			platno.repaint();
 		
 	}
 	
-	@Override
-	public Dimension getPreferredSize() {
-		return new Dimension(400, 300);
-	}
-
 }
