@@ -15,11 +15,13 @@ import abstraktnost.PrviIzbor;
 public class Platno extends JPanel implements ActionListener{
 	
 	private PrviIzbor izbirabarve;
-	private BufferedImage slika = new BufferedImage(200,300,BufferedImage.TYPE_INT_ARGB);
+	protected BufferedImage slika = new BufferedImage(200,300,BufferedImage.TYPE_INT_ARGB);
+	private GlavnoOkno glavnoOkno;
 	
 	public Platno(GlavnoOkno glavno) {
 		super();
 		this.setBackground(Color.white);
+		this.glavnoOkno = glavno;
 	}
 	
 	@Override
@@ -30,18 +32,29 @@ public class Platno extends JPanel implements ActionListener{
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		g.drawImage(slika, 0, 0, null);
+		}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == this.glavnoOkno.btnNovo()) {
+			narisinovo();
+			super.repaint();
+			}
+		else if (e.getSource() == this.glavnoOkno.mntmShrani()) {
+			Shrani.izbiraFolderja(slika);
+			System.out.println("shrani");
+			super.repaint();
+		}
+	}
+	
+	
+	private void narisinovo(){
 		izbirabarve = new PrviIzbor(15, 3);
 		for (int x = 0;x < 200;x++) {
 			for(int y = 0;y < 300;y++){
 				slika.setRGB(x, y, izbirabarve.eval(x, y).getRGB());
 			}
 		}
-		g.drawImage(slika, 0, 0, null);
-		Shrani.shrani(slika,"C:/Users/Miha/Desktop","test.png");
-		}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		super.repaint();
 	}
 }
