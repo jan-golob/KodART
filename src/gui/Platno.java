@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
@@ -14,6 +15,7 @@ import abstraktnost.PrviIzbor;
 public class Platno extends JPanel implements ActionListener{
 	
 	private PrviIzbor izbirabarve;
+	private BufferedImage slika = new BufferedImage(200,300,BufferedImage.TYPE_INT_ARGB);
 	
 	public Platno(GlavnoOkno glavno) {
 		super();
@@ -28,13 +30,14 @@ public class Platno extends JPanel implements ActionListener{
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		izbirabarve = new PrviIzbor(5, 3);
+		izbirabarve = new PrviIzbor(15, 3);
 		for (int x = 0;x < 200;x++) {
 			for(int y = 0;y < 300;y++){
-				g.setColor(izbirabarve.eval(x, y));
-				g.drawLine(x, y, x, y);
+				slika.setRGB(x, y, izbirabarve.eval(x, y).getRGB());
 			}
 		}
+		g.drawImage(slika, 0, 0, null);
+		Shrani.shrani(slika,"C:/Users/Miha/Desktop","test.png");
 		}
 	
 	@Override
