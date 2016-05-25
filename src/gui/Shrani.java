@@ -12,8 +12,9 @@ public class Shrani {
 	final static JFileChooser fileChooser = new JFileChooser();
 	
 	public static void izbiraFolderja(BufferedImage slika){
-		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-		int result = fileChooser.showOpenDialog(null);
+		String pot = System.getProperty("user.home") + "/*.png";
+		fileChooser.setSelectedFile(new File(pot));
+		int result = fileChooser.showSaveDialog(null);
 		if (result == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = fileChooser.getSelectedFile();
 		    shrani(slika,selectedFile.getAbsolutePath());
