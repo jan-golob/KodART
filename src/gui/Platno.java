@@ -13,9 +13,11 @@ import abstraktnost.PrviIzbor;
 
 @SuppressWarnings("serial")
 public class Platno extends JPanel implements ActionListener{
+	static int sirina = 600;
+	static int visina = 900;
 	
 	private PrviIzbor izbirabarve;
-	protected static BufferedImage slika = new BufferedImage(200,300,BufferedImage.TYPE_INT_ARGB);
+	protected static BufferedImage slika = new BufferedImage(sirina,visina,BufferedImage.TYPE_INT_ARGB);
 	private GlavnoOkno glavnoOkno;
 	
 	public Platno(GlavnoOkno glavno) {
@@ -26,7 +28,7 @@ public class Platno extends JPanel implements ActionListener{
 	
 	@Override
 	public Dimension getPreferredSize() {
-		return new Dimension(200, 300);
+		return new Dimension(sirina, visina);
 	}
 
 	@Override
@@ -46,8 +48,8 @@ public class Platno extends JPanel implements ActionListener{
 	
 	private void narisinovo(){
 		izbirabarve = new PrviIzbor(15, 3, Checkbox.kateri());
-		for (int x = 0;x < 200;x++) {
-			for(int y = 0;y < 300;y++){
+		for (int x = 0;x < sirina;x++) {
+			for(int y = 0;y < visina;y++){
 				slika.setRGB(x, y, izbirabarve.eval(x, y).getRGB());
 			}
 		}
