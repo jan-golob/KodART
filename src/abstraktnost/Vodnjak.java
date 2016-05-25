@@ -4,8 +4,8 @@ import java.awt.Color;
 
 public class Vodnjak extends IzborBarve {
 
-	public Vodnjak(int kompleksnost) {
-		super(1, kompleksnost - 1);
+	public Vodnjak(int kompleksnost, int[] podIz) {
+		super(1, kompleksnost - 1, podIz);
 	}
 	
 	private float vodnak(float x){

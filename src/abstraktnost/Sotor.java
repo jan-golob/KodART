@@ -4,8 +4,8 @@ import java.awt.Color;
 
 public class Sotor extends IzborBarve {
 
-	public Sotor(int kompleksnost) {
-		super(1,kompleksnost -1);
+	public Sotor(int kompleksnost, int[] podIz) {
+		super(1,kompleksnost -1, podIz);
 	}
 	
 	private float sotor(float x){

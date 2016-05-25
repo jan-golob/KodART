@@ -17,8 +17,8 @@ public class Sinus extends IzborBarve {
 
 
 	Random j = new Random();
-	public Sinus(int kompleksnost) {
-		super(1,kompleksnost -1);
+	public Sinus(int kompleksnost, int[] podIz) {
+		super(1,kompleksnost -1, podIz);
 		faza = (float) (Math.random() * (upper - lower) + lower);
 		frekvenca = (float) (Math.random() * (upper1 - lower1) + lower1);
 	}

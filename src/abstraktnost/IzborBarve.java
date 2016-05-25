@@ -8,10 +8,12 @@ public abstract class IzborBarve {
 	
 	public int kompleksnost;
 	protected IzborBarve[] podizbori;
+	private int[] potencialneIzbire;
 	
-	public IzborBarve(int stopnja, int kompleksnost) {
+	public IzborBarve(int stopnja, int kompleksnost, int[] potIzb) {
 		this.kompleksnost = kompleksnost;
 		this.podizbori = new IzborBarve[stopnja];
+		this.potencialneIzbire = potIzb;
 		if (kompleksnost == 0) {
 			for (int i = 0; i < stopnja; i++) {
 				podizbori[i] = nakBarva1();
@@ -19,7 +21,7 @@ public abstract class IzborBarve {
 		}
 		else {
 			for (int i = 0; i < stopnja; i++) {
-				podizbori[i] = nakBarva2(kompleksnost);
+				podizbori[i] = nakBarva2();
 			}
 		}
 	}
@@ -47,12 +49,13 @@ public abstract class IzborBarve {
 		return barva;
 	}
 	
-	private IzborBarve nakBarva2(int kompleks) {
+	private IzborBarve nakBarva2() {
 		Random av = new Random();
-		int r = av.nextInt(11);
+		int j = av.nextInt(this.potencialneIzbire.length);
+		int r = this.potencialneIzbire[j];
 		IzborBarve barva = null;
 		if (r == 0) {
-			 barva = new Abscisa();
+			barva = new Abscisa();
 		}
 		if (r == 1) {
 			barva = new Ordinata();
@@ -61,28 +64,28 @@ public abstract class IzborBarve {
 			barva = new Konstanta();
 		}
 		if (r == 3) {
-			 barva = new Vsota(kompleks);
+			barva = new Vsota(this.kompleksnost, this.potencialneIzbire);
 		}
 		if (r == 4) {
-			 barva = new Modul(kompleks);
+			barva = new Modul(this.kompleksnost, this.potencialneIzbire);
 		}
 		if (r == 5) {
-			 barva = new Produkt(kompleks);
+			barva = new Produkt(this.kompleksnost, this.potencialneIzbire);
 		}
 		if (r == 6) {
-			 barva = new Level(kompleks);
+			barva = new Level(this.kompleksnost, this.potencialneIzbire);
 		}
 		if (r == 7) {
-			 barva = new Sinus(kompleks);
+			barva = new Sinus(this.kompleksnost, this.potencialneIzbire);
 		}
 		if (r == 8) {
-			 barva = new Sotor(kompleks);
+			barva = new Sotor(this.kompleksnost, this.potencialneIzbire);
 		}
 		if (r == 9) {
-			 barva = new Vodnjak(kompleks);
+			barva = new Vodnjak(this.kompleksnost, this.potencialneIzbire);
 		}
 		if (r == 10) {
-			 barva = new Mesanje(kompleks);
+			barva = new Mesanje(this.kompleksnost, this.potencialneIzbire);
 		}
 		return barva;
 	}

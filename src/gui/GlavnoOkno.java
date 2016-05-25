@@ -24,7 +24,7 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 	private JPanel contentPane;
 	private Platno platno;
 	
-	PrviIzbor izbirabarve = new PrviIzbor(5, 3);
+	PrviIzbor izbirabarve = new PrviIzbor(5, 3, );
 
 	private JMenuItem mntmShrani;
 	private JButton btnNovo;

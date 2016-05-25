@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class PrviIzbor extends IzborBarve {
 
-	public PrviIzbor(int stopnja, int kompleksnost) {
-		super(stopnja, kompleksnost);
+	public PrviIzbor(int stopnja, int kompleksnost, int[] podIz) {
+		super(stopnja, kompleksnost, podIz);
 	}
 
 	@Override
