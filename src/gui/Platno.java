@@ -45,7 +45,7 @@ public class Platno extends JPanel implements ActionListener{
 	
 	
 	private void narisinovo(){
-		izbirabarve = new PrviIzbor(15, 3);
+		izbirabarve = new PrviIzbor(15, 3, Checkbox.kateri());
 		for (int x = 0;x < 200;x++) {
 			for(int y = 0;y < 300;y++){
 				slika.setRGB(x, y, izbirabarve.eval(x, y).getRGB());
