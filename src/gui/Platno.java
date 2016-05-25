@@ -15,7 +15,7 @@ import abstraktnost.PrviIzbor;
 public class Platno extends JPanel implements ActionListener{
 	
 	private PrviIzbor izbirabarve;
-	protected BufferedImage slika = new BufferedImage(200,300,BufferedImage.TYPE_INT_ARGB);
+	protected static BufferedImage slika = new BufferedImage(200,300,BufferedImage.TYPE_INT_ARGB);
 	private GlavnoOkno glavnoOkno;
 	
 	public Platno(GlavnoOkno glavno) {
@@ -41,11 +41,6 @@ public class Platno extends JPanel implements ActionListener{
 			narisinovo();
 			super.repaint();
 			}
-		else if (e.getSource() == this.glavnoOkno.mntmShrani()) {
-			Shrani.izbiraFolderja(slika);
-			System.out.println("shrani");
-			super.repaint();
-		}
 	}
 	
 	

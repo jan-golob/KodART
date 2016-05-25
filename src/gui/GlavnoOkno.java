@@ -4,6 +4,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
@@ -18,7 +19,7 @@ import javax.swing.border.EmptyBorder;
 import abstraktnost.PrviIzbor;
 
 @SuppressWarnings("serial")
-public class GlavnoOkno extends JFrame{
+public class GlavnoOkno extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private Platno platno;
@@ -44,7 +45,7 @@ public class GlavnoOkno extends JFrame{
 		mntmShrani = new JMenuItem("Shrani",KeyEvent.VK_S);
 		mnShranjevanje.add(mntmShrani);
 		mntmShrani.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.ALT_MASK));
-		mntmShrani.addActionListener(this.platno);
+		mntmShrani.addActionListener(this);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -72,13 +73,20 @@ public class GlavnoOkno extends JFrame{
 		btnNovo().addActionListener(this.platno);
 		contentPane.add(btnNovo, gbc_btnNovo);
 	}
-	
-	public JMenuItem mntmShrani() {
-		return this.mntmShrani;
-	}
+
 	
 	public JButton btnNovo() {
 		return this.btnNovo;
+	}
+
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmShrani) {
+			Shrani.izbiraFolderja(Platno.slika);
+			super.repaint();
+		}
+		
 	}
 	
 }
