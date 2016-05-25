@@ -9,21 +9,25 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
+import abstraktnost.Info;
 import abstraktnost.PrviIzbor;
 
 @SuppressWarnings("serial")
 public class Platno extends JPanel implements ActionListener{
-	static int sirina = 600;
-	static int visina = 900;
+	int sirina;
+	int visina;
 	
 	private PrviIzbor izbirabarve;
-	protected static BufferedImage slika = new BufferedImage(sirina,visina,BufferedImage.TYPE_INT_ARGB);
+	protected BufferedImage slika;
 	private GlavnoOkno glavnoOkno;
 	
 	public Platno(GlavnoOkno glavno) {
 		super();
 		this.setBackground(Color.white);
 		this.glavnoOkno = glavno;
+		sirina = 200;
+		visina = 300;
+		slika = new BufferedImage(sirina, visina,BufferedImage.TYPE_INT_ARGB);
 	}
 	
 	@Override
@@ -47,7 +51,7 @@ public class Platno extends JPanel implements ActionListener{
 	
 	
 	private void narisinovo(){
-		izbirabarve = new PrviIzbor(15, 3, Checkbox.kateri());
+		izbirabarve = new PrviIzbor(4, 1, new Info(sirina, visina, Checkbox.kateri()));
 		for (int x = 0;x < sirina;x++) {
 			for(int y = 0;y < visina;y++){
 				slika.setRGB(x, y, izbirabarve.eval(x, y).getRGB());

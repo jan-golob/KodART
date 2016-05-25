@@ -4,8 +4,8 @@ import java.awt.Color;
 
 public class Modul extends IzborBarve {
 
-	public Modul(int kompleksnost, int[] podIz) {
-		super(2, kompleksnost-1, podIz);
+	public Modul(int kompleksnost, Info nast) {
+		super(2, kompleksnost-1, nast);
 	}
 
 	@Override

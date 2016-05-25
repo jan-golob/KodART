@@ -8,12 +8,12 @@ public abstract class IzborBarve {
 	
 	public int kompleksnost;
 	protected IzborBarve[] podizbori;
-	private int[] potencialneIzbire;
+	protected Info nastavitve;
 	
-	public IzborBarve(int stopnja, int kompleksnost, int[] potIzb) {
+	public IzborBarve(int stopnja, int kompleksnost, Info nast) {
 		this.kompleksnost = kompleksnost;
+		this.nastavitve = nast;
 		this.podizbori = new IzborBarve[stopnja];
-		this.potencialneIzbire = potIzb;
 		if (kompleksnost == 0) {
 			for (int i = 0; i < stopnja; i++) {
 				podizbori[i] = nakBarva1();
@@ -27,8 +27,9 @@ public abstract class IzborBarve {
 	}
 	
 	
-	public IzborBarve() {
+	public IzborBarve(Info nast) {
 		this.kompleksnost = 0;
+		this.nastavitve = nast;
 	}
 
 
@@ -38,54 +39,54 @@ public abstract class IzborBarve {
 		int r = av.nextInt(3);
 		IzborBarve barva = null;
 		if (r == 0) {
-			 barva = new Abscisa();
+			 barva = new Abscisa(this.nastavitve);
 		}
 		if (r == 1) {
-			barva = new Ordinata();
+			barva = new Ordinata(this.nastavitve);
 		}
 		if (r == 2) {
-			barva = new Konstanta();
+			barva = new Konstanta(this.nastavitve);
 		}
 		return barva;
 	}
 	
 	private IzborBarve nakBarva2() {
 		Random av = new Random();
-		int j = av.nextInt(this.potencialneIzbire.length);
-		int r = this.potencialneIzbire[j];
+		int j = av.nextInt(this.nastavitve.getPotencialne().length);
+		int r = this.nastavitve.getPotencialne()[j];
 		IzborBarve barva = null;
 		if (r == 0) {
-			barva = new Abscisa();
+			barva = new Abscisa(this.nastavitve);
 		}
 		if (r == 1) {
-			barva = new Ordinata();
+			barva = new Ordinata(this.nastavitve);
 		}
 		if (r == 2) {
-			barva = new Konstanta();
+			barva = new Konstanta(this.nastavitve);
 		}
 		if (r == 3) {
-			barva = new Vsota(this.kompleksnost, this.potencialneIzbire);
+			barva = new Vsota(this.kompleksnost, this.nastavitve);
 		}
 		if (r == 4) {
-			barva = new Modul(this.kompleksnost, this.potencialneIzbire);
+			barva = new Modul(this.kompleksnost, this.nastavitve);
 		}
 		if (r == 5) {
-			barva = new Produkt(this.kompleksnost, this.potencialneIzbire);
+			barva = new Produkt(this.kompleksnost, this.nastavitve);
 		}
 		if (r == 6) {
-			barva = new Level(this.kompleksnost, this.potencialneIzbire);
+			barva = new Level(this.kompleksnost, this.nastavitve);
 		}
 		if (r == 7) {
-			barva = new Sinus(this.kompleksnost, this.potencialneIzbire);
+			barva = new Sinus(this.kompleksnost, this.nastavitve);
 		}
 		if (r == 8) {
-			barva = new Sotor(this.kompleksnost, this.potencialneIzbire);
+			barva = new Sotor(this.kompleksnost, this.nastavitve);
 		}
 		if (r == 9) {
-			barva = new Vodnjak(this.kompleksnost, this.potencialneIzbire);
+			barva = new Vodnjak(this.kompleksnost, this.nastavitve);
 		}
 		if (r == 10) {
-			barva = new Mesanje(this.kompleksnost, this.potencialneIzbire);
+			barva = new Mesanje(this.kompleksnost, this.nastavitve);
 		}
 		return barva;
 	}

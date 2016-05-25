@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 
+import abstraktnost.Info;
 import abstraktnost.PrviIzbor;
 
 @SuppressWarnings("serial")
@@ -24,8 +25,6 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 	private JPanel contentPane;
 	private Platno platno;
 	
-	PrviIzbor izbirabarve = new PrviIzbor(5, 3, Checkbox.kateri());
-
 	private JMenuItem mntmShrani;
 	private JButton btnNovo;
 
@@ -83,7 +82,7 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == mntmShrani) {
-			Shrani.izbiraFolderja(Platno.slika);
+			Shrani.izbiraFolderja(platno.slika);
 			super.repaint();
 		}
 		

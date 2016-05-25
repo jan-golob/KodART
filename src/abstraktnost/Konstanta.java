@@ -6,8 +6,8 @@ import java.util.Random;
 public class Konstanta extends IzborBarve {
 
 	private Color nakBarva; 
-	public Konstanta() {
-		super();
+	public Konstanta(Info nast) {
+		super(nast);
 		Random j = new Random();
 		nakBarva = new Color(j.nextFloat(),j.nextFloat(),j.nextFloat());
 	}
