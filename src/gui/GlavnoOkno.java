@@ -23,7 +23,7 @@ import abstraktnost.PrviIzbor;
 public class GlavnoOkno extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
-	private Platno platno;
+	public Platno platno;
 	
 	private JMenuItem mntmShrani;
 	private JMenuItem mntmNastavitve;
