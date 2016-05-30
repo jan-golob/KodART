@@ -26,6 +26,7 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 	private Platno platno;
 	
 	private JMenuItem mntmShrani;
+	private JMenuItem mntmNastavitve;
 	private JButton btnNovo;
 
 	/**
@@ -45,6 +46,11 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		mnShranjevanje.add(mntmShrani);
 		mntmShrani.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.ALT_MASK));
 		mntmShrani.addActionListener(this);
+		
+		mntmNastavitve = new JMenuItem("Nastavitve",KeyEvent.VK_N);
+		mnShranjevanje.add(mntmNastavitve);
+		mntmNastavitve.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.ALT_MASK));
+		mntmNastavitve.addActionListener(this);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -86,6 +92,11 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 			super.repaint();
 		}
 		
+		else if (e.getSource() == mntmNastavitve) {
+			NastavitveOkno nast = new NastavitveOkno();
+			super.repaint();
+		
 	}
 	
+}
 }
