@@ -7,8 +7,8 @@ public class Info {
 	
 	public Info(int sirina, int visina,
 			int[] potencialneIzbire) {
-		this.sirina = 0;
-		this.visina = 0;
+		this.sirina = sirina;
+		this.visina = visina;
 		this.potencialneIzbire = potencialneIzbire;
 	}
 	public int[] getPotencialne() {
