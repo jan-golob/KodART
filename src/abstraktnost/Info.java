@@ -19,7 +19,15 @@ public class Info {
 		return visina;
 	}
 
+	public void setSirina(int sirina) {
+		this.sirina = sirina;
+	}
+
+	public void setVisina(int visina) {
+		this.visina = visina;
+	}
 	public int getX() {
 		return sirina;
 	}
+	
 }

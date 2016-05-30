@@ -24,6 +24,7 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	public Platno platno;
+	private Info nastavitve;
 	
 	private JMenuItem mntmShrani;
 	private JMenuItem mntmNastavitve;
@@ -62,8 +63,8 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		gbl_contentPane.rowWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
-		
-		platno = new Platno(this);
+		nastavitve = new Info(200, 300, Checkbox.kateri());
+		platno = new Platno(this, nastavitve);
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.fill = GridBagConstraints.BOTH;
@@ -93,7 +94,7 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		}
 		
 		else if (e.getSource() == mntmNastavitve) {
-			NastavitveOkno nast = new NastavitveOkno();
+			NastavitveOkno nast = new NastavitveOkno(nastavitve);
 			super.repaint();
 		
 	}

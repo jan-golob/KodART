@@ -14,19 +14,25 @@ import abstraktnost.PrviIzbor;
 
 @SuppressWarnings("serial")
 public class Platno extends JPanel implements ActionListener{
-	int sirina;
-	int visina;
+	private int sirina;
+	private int visina;
+	private Info nast;
 	
 	private PrviIzbor izbirabarve;
 	protected BufferedImage slika;
 	private GlavnoOkno glavnoOkno;
 	
-	public Platno(GlavnoOkno glavno) {
+	private void nastaviXY() {
+		sirina = nast.getX();
+		visina = nast.getY();
+	}
+	
+	public Platno(GlavnoOkno glavno, Info nast) {
 		super();
 		this.setBackground(Color.white);
 		this.glavnoOkno = glavno;
-		sirina = 200;
-		visina = 300;
+		this.nast = nast;
+		nastaviXY();
 		slika = new BufferedImage(sirina, visina,BufferedImage.TYPE_INT_ARGB);
 	}
 	
