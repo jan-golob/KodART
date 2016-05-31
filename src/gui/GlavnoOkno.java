@@ -12,12 +12,12 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 
 import abstraktnost.Info;
-import abstraktnost.PrviIzbor;
 
 @SuppressWarnings("serial")
 public class GlavnoOkno extends JFrame implements ActionListener{
@@ -95,6 +95,9 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		
 		else if (e.getSource() == mntmNastavitve) {
 			NastavitveOkno nast = new NastavitveOkno(nastavitve);
+			System.out.println(nastavitve.getX());
+			platno = new Platno(this,nastavitve);
+			System.out.println(nastavitve);
 			super.repaint();
 		
 	}

@@ -1,7 +1,5 @@
 package gui;
 
-import java.util.ArrayList;
-
 public class Checkbox {
 	public static int[] kateri() {
 		int[] Seznam = new int[11];

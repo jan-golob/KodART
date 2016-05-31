@@ -50,6 +50,7 @@ public class Platno extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == this.glavnoOkno.btnNovo()) {
+			System.out.println(sirina +" visina:" + visina);
 			narisinovo();
 			super.repaint();
 			}
