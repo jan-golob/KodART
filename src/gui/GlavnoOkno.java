@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -102,10 +103,6 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 
 			super.repaint();
 			
-			}
-		
-			else if (e.getSource() == nast.btnShrani){
-				System.out.println("tuki");
 			}
 		
 	

@@ -258,11 +258,11 @@ public class NastavitveOkno implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		//System.out.println(Integer.parseInt(textField.getText()));
-		System.out.println(main.nastavitve.getX());
 		main.nastavitve.setSirina(Integer.parseInt(textField.getText()));
 		main.nastavitve.setVisina(Integer.parseInt(textField_1.getText()));
+		System.out.println(main.nastavitve.getX());
 		main.platno.ponastavi();
+		main.pack();
 		frame.dispose();
 		
 	}
