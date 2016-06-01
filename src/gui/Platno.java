@@ -22,6 +22,12 @@ public class Platno extends JPanel implements ActionListener{
 	protected BufferedImage slika;
 	private GlavnoOkno glavnoOkno;
 	
+	public void ponastavi() {
+		this.nastaviXY();
+		slika = new BufferedImage(sirina, visina,BufferedImage.TYPE_INT_ARGB);
+		this.getPreferredSize();
+	}
+	
 	private void nastaviXY() {
 		sirina = nast.getX();
 		visina = nast.getY();
@@ -50,7 +56,6 @@ public class Platno extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == this.glavnoOkno.btnNovo()) {
-			System.out.println(sirina +" visina:" + visina);
 			narisinovo();
 			super.repaint();
 			}

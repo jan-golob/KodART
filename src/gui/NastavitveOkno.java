@@ -21,11 +21,13 @@ public class NastavitveOkno implements ActionListener{
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	private Info info;
+	private JFrame frame;
+	public JButton btnShrani;
+	private GlavnoOkno main;
 
-	public NastavitveOkno(Info info1) {
-		info = info1;
-		JFrame frame = new JFrame();
+	public NastavitveOkno(GlavnoOkno main) {
+		this.main = main;
+		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
 		
@@ -84,7 +86,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_textField.gridy = 1;
 		contentPane.add(textField, gbc_textField);
 		textField.setColumns(10);
-		textField.setText(Integer.toString(info.getX()));
+		textField.setText(Integer.toString(main.nastavitve.getX()));
 		
 		JCheckBox checkBox_1 = new JCheckBox("");
 		GridBagConstraints gbc_checkBox_1 = new GridBagConstraints();
@@ -130,7 +132,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_textField_1.gridy = 2;
 		contentPane.add(textField_1, gbc_textField_1);
 		textField_1.setColumns(10);
-		textField_1.setText(Integer.toString(info.getY()));
+		textField_1.setText(Integer.toString(main.nastavitve.getY()));
 		
 		JCheckBox checkBox_2 = new JCheckBox("");
 		GridBagConstraints gbc_checkBox_2 = new GridBagConstraints();
@@ -244,19 +246,24 @@ public class NastavitveOkno implements ActionListener{
 		gbc_lblVsota.gridy = 6;
 		contentPane.add(lblVsota, gbc_lblVsota);
 		
-		JButton btnShrani = new JButton("Shrani");
+		btnShrani = new JButton("Shrani");
 		GridBagConstraints gbc_btnShrani = new GridBagConstraints();
 		gbc_btnShrani.insets = new Insets(0, 0, 0, 5);
 		gbc_btnShrani.gridx = 5;
 		gbc_btnShrani.gridy = 7;
 		contentPane.add(btnShrani, gbc_btnShrani);
 		btnShrani.addActionListener(this);
+		btnShrani.addActionListener(main);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		info.setSirina(Integer.parseInt(textField.getText()));
-		info.setVisina(Integer.parseInt(textField_1.getText()));
+		//System.out.println(Integer.parseInt(textField.getText()));
+		System.out.println(main.nastavitve.getX());
+		main.nastavitve.setSirina(Integer.parseInt(textField.getText()));
+		main.nastavitve.setVisina(Integer.parseInt(textField_1.getText()));
+		main.platno.ponastavi();
+		frame.dispose();
 		
 	}
 
