@@ -26,9 +26,12 @@ public class NastavitveOkno implements ActionListener{
 	private JCheckBox[] chechboxi;
 	private GlavnoOkno main;
 
+	/**
+	 * @param main
+	 */
 	public NastavitveOkno(GlavnoOkno main) {
 		this.main = main;
-		this.chechboxi = new JCheckBox[12];
+		this.chechboxi = new JCheckBox[11];
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
@@ -65,7 +68,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_6.gridy = 1;
 		contentPane.add(chechboxi[6], gbc_checkBox_6);
 		
-		JLabel lblPovprecje = new JLabel("Povprecje");
+		JLabel lblPovprecje = new JLabel("Level");
 		GridBagConstraints gbc_lblPovprecje = new GridBagConstraints();
 		gbc_lblPovprecje.insets = new Insets(0, 0, 5, 5);
 		gbc_lblPovprecje.gridx = 4;
@@ -88,7 +91,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_textField.gridy = 1;
 		contentPane.add(textField, gbc_textField);
 		textField.setColumns(10);
-		textField.setText(Integer.toString(main.nastavitve.getX()));
+		textField.setText(Integer.toString(main.nastavitve.getSirina()));
 		
 		chechboxi[1] = new JCheckBox("");
 		GridBagConstraints gbc_checkBox_1 = new GridBagConstraints();
@@ -97,7 +100,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_1.gridy = 2;
 		contentPane.add(chechboxi[1], gbc_checkBox_1);
 		
-		JLabel lblKonstanta = new JLabel("Konstanta");
+		JLabel lblKonstanta = new JLabel("Ordinata");
 		GridBagConstraints gbc_lblKonstanta = new GridBagConstraints();
 		gbc_lblKonstanta.insets = new Insets(0, 0, 5, 5);
 		gbc_lblKonstanta.gridx = 2;
@@ -111,7 +114,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_7.gridy = 2;
 		contentPane.add(chechboxi[7], gbc_checkBox_7);
 		
-		JLabel lblProdukt = new JLabel("Produkt");
+		JLabel lblProdukt = new JLabel("Sinus");
 		GridBagConstraints gbc_lblProdukt = new GridBagConstraints();
 		gbc_lblProdukt.insets = new Insets(0, 0, 5, 5);
 		gbc_lblProdukt.gridx = 4;
@@ -134,7 +137,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_textField_1.gridy = 2;
 		contentPane.add(textField_1, gbc_textField_1);
 		textField_1.setColumns(10);
-		textField_1.setText(Integer.toString(main.nastavitve.getY()));
+		textField_1.setText(Integer.toString(main.nastavitve.getVisina()));
 		
 		chechboxi[2] = new JCheckBox("");
 		GridBagConstraints gbc_checkBox_2 = new GridBagConstraints();
@@ -143,7 +146,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_2.gridy = 3;
 		contentPane.add(chechboxi[2], gbc_checkBox_2);
 		
-		JLabel lblLevel = new JLabel("Level");
+		JLabel lblLevel = new JLabel("Konstanta");
 		GridBagConstraints gbc_lblLevel = new GridBagConstraints();
 		gbc_lblLevel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblLevel.gridx = 2;
@@ -157,7 +160,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_8.gridy = 3;
 		contentPane.add(chechboxi[8], gbc_checkBox_8);
 		
-		JLabel lblSinus = new JLabel("Sinus");
+		JLabel lblSinus = new JLabel("Šotor");
 		GridBagConstraints gbc_lblSinus = new GridBagConstraints();
 		gbc_lblSinus.insets = new Insets(0, 0, 5, 5);
 		gbc_lblSinus.gridx = 4;
@@ -171,7 +174,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_3.gridy = 4;
 		contentPane.add(chechboxi[3], gbc_checkBox_3);
 		
-		JLabel lblMesanje = new JLabel("Mesanje");
+		JLabel lblMesanje = new JLabel("Vsota");
 		GridBagConstraints gbc_lblMesanje = new GridBagConstraints();
 		gbc_lblMesanje.insets = new Insets(0, 0, 5, 5);
 		gbc_lblMesanje.gridx = 2;
@@ -185,7 +188,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_9.gridy = 4;
 		contentPane.add(chechboxi[9], gbc_checkBox_9);
 		
-		JLabel lblSotor = new JLabel("Sotor");
+		JLabel lblSotor = new JLabel("Vodnjak");
 		GridBagConstraints gbc_lblSotor = new GridBagConstraints();
 		gbc_lblSotor.insets = new Insets(0, 0, 5, 5);
 		gbc_lblSotor.gridx = 4;
@@ -213,7 +216,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_10.gridy = 5;
 		contentPane.add(chechboxi[10], gbc_checkBox_10);
 		
-		JLabel lblVodnjak = new JLabel("Vodnjak");
+		JLabel lblVodnjak = new JLabel("Mesanje");
 		GridBagConstraints gbc_lblVodnjak = new GridBagConstraints();
 		gbc_lblVodnjak.insets = new Insets(0, 0, 5, 5);
 		gbc_lblVodnjak.gridx = 4;
@@ -227,26 +230,17 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_5.gridy = 6;
 		contentPane.add(chechboxi[5], gbc_checkBox_5);
 		
-		JLabel lblOrdinata = new JLabel("Ordinata");
+		JLabel lblOrdinata = new JLabel("Produkt");
 		GridBagConstraints gbc_lblOrdinata = new GridBagConstraints();
 		gbc_lblOrdinata.insets = new Insets(0, 0, 5, 5);
 		gbc_lblOrdinata.gridx = 2;
 		gbc_lblOrdinata.gridy = 6;
 		contentPane.add(lblOrdinata, gbc_lblOrdinata);
 		
-		chechboxi[11] = new JCheckBox("");
-		GridBagConstraints gbc_checkBox_11 = new GridBagConstraints();
-		gbc_checkBox_11.insets = new Insets(0, 0, 5, 5);
-		gbc_checkBox_11.gridx = 3;
-		gbc_checkBox_11.gridy = 6;
-		contentPane.add(chechboxi[11], gbc_checkBox_11);
-		
-		JLabel lblVsota = new JLabel("Vsota");
-		GridBagConstraints gbc_lblVsota = new GridBagConstraints();
-		gbc_lblVsota.insets = new Insets(0, 0, 5, 5);
-		gbc_lblVsota.gridx = 4;
-		gbc_lblVsota.gridy = 6;
-		contentPane.add(lblVsota, gbc_lblVsota);
+		for (int i : this.main.nastavitve.getPotencialne()) {
+			chechboxi[i].setSelected(true);
+		}
+	
 		
 		btnShrani = new JButton("Shrani");
 		GridBagConstraints gbc_btnShrani = new GridBagConstraints();
@@ -262,7 +256,8 @@ public class NastavitveOkno implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 		main.nastavitve.setSirina(Integer.parseInt(textField.getText()));
 		main.nastavitve.setVisina(Integer.parseInt(textField_1.getText()));
-		System.out.println(main.nastavitve.getX());
+		main.nastavitve.setPotencialne(preberiChechkboxe());
+		System.out.println(main.nastavitve.getSirina());
 		main.platno.ponastavi();
 		main.pack();
 		frame.dispose();
@@ -283,7 +278,18 @@ public class NastavitveOkno implements ActionListener{
 				podizbori[j]=i;
 			}
 		}
+		if (podizbori.length == 0) {
+			podizbori = new int[1];
+			podizbori[0] = 3;
+		}
 		return podizbori;
 	}
 
+	public static int[] vsiIzbori() {
+		int[] Seznam = new int[11];
+		for (int i = 0; i < Seznam.length; i++) {
+			Seznam[i]=i;
+		}
+		return Seznam;
+	}
 }

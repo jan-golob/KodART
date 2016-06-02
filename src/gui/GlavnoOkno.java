@@ -39,7 +39,7 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
-		nastavitve = new Info(200, 300, Checkbox.kateri());
+		nastavitve = new Info(200, 300, NastavitveOkno.vsiIzbori());
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);

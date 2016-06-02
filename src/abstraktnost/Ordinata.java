@@ -10,7 +10,7 @@ public class Ordinata extends IzborBarve {
 
 	@Override
 	public Color eval(float x, float y) {
-		float n = (float) (y/(nastavitve.getY()+10));
+		float n = (float) (y/(nastavitve.getVisina()+1));
 		return new Color(n,n,n);
 	
 

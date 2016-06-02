@@ -23,14 +23,14 @@ public class Platno extends JPanel implements ActionListener{
 	private GlavnoOkno glavnoOkno;
 	
 	public void ponastavi() {
-		this.nastaviXY();
+		this.nastaviStranice();
 		slika = new BufferedImage(sirina, visina,BufferedImage.TYPE_INT_ARGB);
 		this.getPreferredSize();
 	}
 	
-	private void nastaviXY() {
-		sirina = nast.getX();
-		visina = nast.getY();
+	private void nastaviStranice() {
+		sirina = nast.getSirina();
+		visina = nast.getVisina();
 	}
 	
 	public Platno(GlavnoOkno glavno, Info nast) {
@@ -38,7 +38,7 @@ public class Platno extends JPanel implements ActionListener{
 		this.setBackground(Color.white);
 		this.glavnoOkno = glavno;
 		this.nast = nast;
-		nastaviXY();
+		nastaviStranice();
 		slika = new BufferedImage(sirina, visina,BufferedImage.TYPE_INT_ARGB);
 	}
 	
@@ -63,7 +63,7 @@ public class Platno extends JPanel implements ActionListener{
 	
 	
 	protected void narisinovo(){
-		izbirabarve = new PrviIzbor(5, 3, new Info(sirina, visina, Checkbox.kateri()));
+		izbirabarve = new PrviIzbor(5, 3, nast);
 		for (int x = 0;x < sirina;x++) {
 			for(int y = 0;y < visina;y++){
 				slika.setRGB(x, y, izbirabarve.eval(x, y).getRGB());

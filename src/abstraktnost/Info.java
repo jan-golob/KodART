@@ -15,19 +15,23 @@ public class Info {
 		return potencialneIzbire;
 	}
 	
-	public int getY() {
-		return visina;
+	public void setPotencialne(int[] izbor) {
+		this.potencialneIzbire = izbor;
 	}
-
+	
 	public void setSirina(int sirina) {
 		this.sirina = sirina;
 	}
-
-	public void setVisina(int visina) {
-		this.visina = visina;
-	}
-	public int getX() {
+	
+	public int getSirina() {
 		return sirina;
 	}
 	
+	public void setVisina(int visina) {
+		this.visina = visina;
+	}
+	
+	public int getVisina() {
+		return visina;
+	}
 }
