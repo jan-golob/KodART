@@ -14,8 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import abstraktnost.Info;
-
 public class NastavitveOkno implements ActionListener{
 	
 	private JPanel contentPane;
@@ -257,7 +255,6 @@ public class NastavitveOkno implements ActionListener{
 		main.nastavitve.setSirina(Integer.parseInt(textField.getText()));
 		main.nastavitve.setVisina(Integer.parseInt(textField_1.getText()));
 		main.nastavitve.setPotencialne(preberiChechkboxe());
-		System.out.println(main.nastavitve.getSirina());
 		main.platno.ponastavi();
 		main.pack();
 		frame.dispose();
@@ -276,6 +273,7 @@ public class NastavitveOkno implements ActionListener{
 		for (int i = 0; i < chechboxi.length; i++) {
 			if (chechboxi[i].isSelected()) {
 				podizbori[j]=i;
+				j++;
 			}
 		}
 		if (podizbori.length == 0) {
