@@ -3,15 +3,17 @@ package abstraktnost;
 public class Info {
 	private int sirina;
 	private int visina;
-	private int[] potencialneIzbire;
+	private int[] enostavneIzbire;
+	private int[] komplicirinaIzbire;
 	private boolean prah;
 	
 	public Info(int sirina, int visina,
-			int[] potencialneIzbire) {
+			int[] enostavneIzbire, int[] komplicirinaIzbire ) {
 		this.sirina = sirina;
 		this.visina = visina;
-		this.potencialneIzbire = potencialneIzbire;
-		this.prah = new Boolean(true);
+		this.enostavneIzbire = enostavneIzbire;
+		this.komplicirinaIzbire = komplicirinaIzbire;
+		this.prah = new Boolean(false);
 	}
 	public boolean isPrah() {
 		return prah;
@@ -19,12 +21,21 @@ public class Info {
 	public void setPrah(boolean prah) {
 		this.prah = prah;
 	}
-	public int[] getPotencialne() {
-		return potencialneIzbire;
+
+	public int[] getEnostavneIzbire() {
+		return enostavneIzbire;
 	}
 	
-	public void setPotencialne(int[] izbor) {
-		this.potencialneIzbire = izbor;
+	public void setEnostavneIzbire(int[] enostavneIzbire) {
+		this.enostavneIzbire = enostavneIzbire;
+	}
+	
+	public int[] getKomplicirinaIzbire() {
+		return komplicirinaIzbire;
+	}
+	
+	public void setKomplicirinaIzbire(int[] komplicirinaIzbire) {
+		this.komplicirinaIzbire = komplicirinaIzbire;
 	}
 	
 	public void setSirina(int sirina) {
