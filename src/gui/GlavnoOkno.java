@@ -45,13 +45,16 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		JMenu mnShranjevanje = new JMenu("Shranjevanje");
 		menuBar.add(mnShranjevanje);
 		
+		JMenu mnNastavitve = new JMenu("Nastavitve");
+		menuBar.add(mnNastavitve);
+		
 		mntmShrani = new JMenuItem("Shrani",KeyEvent.VK_S);
 		mnShranjevanje.add(mntmShrani);
 		mntmShrani.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.ALT_MASK));
 		mntmShrani.addActionListener(this);
 		
 		mntmNastavitve = new JMenuItem("Nastavitve",KeyEvent.VK_N);
-		mnShranjevanje.add(mntmNastavitve);
+		mnNastavitve.add(mntmNastavitve);
 		mntmNastavitve.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.ALT_MASK));
 		mntmNastavitve.addActionListener(this);
 		
