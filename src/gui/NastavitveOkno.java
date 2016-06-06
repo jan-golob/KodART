@@ -295,7 +295,7 @@ public class NastavitveOkno implements ActionListener{
 		}
 		if (podizbori.length == 0) {
 			podizbori = new int[1];
-			podizbori[0] = 3;
+			podizbori[0] = 2;
 		}
 		return podizbori;
 	}
