@@ -23,6 +23,7 @@ public class NastavitveOkno implements ActionListener{
 	public JButton btnShrani;
 	private JCheckBox[] chechboxi;
 	private GlavnoOkno main;
+	private JCheckBox prahBox;
 
 	/**
 	 * @param main
@@ -235,9 +236,24 @@ public class NastavitveOkno implements ActionListener{
 		gbc_lblOrdinata.gridy = 6;
 		contentPane.add(lblOrdinata, gbc_lblOrdinata);
 		
+		prahBox = new JCheckBox("");
+		GridBagConstraints gbc_checkBox_11 = new GridBagConstraints();
+		gbc_checkBox_11.insets = new Insets(0, 0, 5, 5);
+		gbc_checkBox_11.gridx = 3;
+		gbc_checkBox_11.gridy = 6;
+		contentPane.add(prahBox, gbc_checkBox_11);
+		
+		JLabel lblPrah = new JLabel("Prah");
+		GridBagConstraints gbc_lblPrah = new GridBagConstraints();
+		gbc_lblPrah.insets = new Insets(0, 0, 5, 5);
+		gbc_lblPrah.gridx = 4;
+		gbc_lblPrah.gridy = 6;
+		contentPane.add(lblPrah, gbc_lblPrah);
+		
 		for (int i : this.main.nastavitve.getPotencialne()) {
 			chechboxi[i].setSelected(true);
 		}
+		prahBox.setSelected(main.nastavitve.isPrah());
 	
 		
 		btnShrani = new JButton("Shrani");
@@ -255,6 +271,7 @@ public class NastavitveOkno implements ActionListener{
 		main.nastavitve.setSirina(Integer.parseInt(textField.getText()));
 		main.nastavitve.setVisina(Integer.parseInt(textField_1.getText()));
 		main.nastavitve.setPotencialne(preberiChechkboxe());
+		main.nastavitve.setPrah(prahBox.isSelected());
 		main.platno.ponastavi();
 		main.pack();
 		frame.dispose();
