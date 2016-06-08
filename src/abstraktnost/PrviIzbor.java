@@ -14,10 +14,10 @@ public class PrviIzbor extends IzborBarve {
 	@Override
 	public Color eval(float x, float y) {
 		Color osnova = this.podizbori[0].eval(x, y);
-		float r = (float) 0.5;
+		float r = (float) 0.3;
 		for (int i = 1; i < podizbori.length; i++) {
 			if (this.nastavitve.isPrah()) {
-				r = j.nextFloat();
+				r = j.nextFloat()/2;
 			}
 			osnova = Povprecje.povprecje(osnova, podizbori[i].eval(x, y), r);
 		}

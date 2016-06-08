@@ -22,8 +22,20 @@ public abstract class IzborBarve {
 			}
 		}
 		else {
+			int maxGlobina = av.nextInt(stopnja);
 			for (int i = 0; i < stopnja; i++) {
-				podizbori[i] = nakBarva2();
+				if (i == maxGlobina) {
+					podizbori[i] = nakBarva2(kompleksnost);
+				}
+				else {
+					int k = av.nextInt(kompleksnost);
+					if (k == 0) {
+						podizbori[i] = nakBarva1();
+					}
+					else {
+						podizbori[i] = nakBarva2(k);
+					}
+				}
 			}
 		}
 	}
@@ -52,34 +64,34 @@ public abstract class IzborBarve {
 		return barva;
 	}
 	
-	private IzborBarve nakBarva2() {
+	private IzborBarve nakBarva2(int taKompleksnost) {
 		Random av = new Random();
 		int j = av.nextInt(this.nastavitve.getKomplicirinaIzbire().length);
 		int r = this.nastavitve.getKomplicirinaIzbire()[j];
 		IzborBarve barva = null;
 		if (r == 0) {
-			barva = new Vsota(this.kompleksnost, this.nastavitve);
+			barva = new Vsota(taKompleksnost, this.nastavitve);
 		}
 		if (r == 1) {
-			barva = new Modul(this.kompleksnost, this.nastavitve);
+			barva = new Modul(taKompleksnost, this.nastavitve);
 		}
 		if (r == 2) {
-			barva = new Produkt(this.kompleksnost, this.nastavitve);
+			barva = new Produkt(taKompleksnost, this.nastavitve);
 		}
 		if (r == 3) {
-			barva = new Level(this.kompleksnost, this.nastavitve);
+			barva = new Level(taKompleksnost, this.nastavitve);
 		}
 		if (r == 4) {
-			barva = new Sinus(this.kompleksnost, this.nastavitve);
+			barva = new Sinus(taKompleksnost, this.nastavitve);
 		}
 		if (r == 5) {
-			barva = new Sotor(this.kompleksnost, this.nastavitve);
+			barva = new Sotor(taKompleksnost, this.nastavitve);
 		}
 		if (r == 6) {
-			barva = new Vodnjak(this.kompleksnost, this.nastavitve);
+			barva = new Vodnjak(taKompleksnost, this.nastavitve);
 		}
 		if (r == 7) {
-			barva = new Mesanje(this.kompleksnost, this.nastavitve);
+			barva = new Mesanje(taKompleksnost, this.nastavitve);
 		}
 		return barva;
 	}
