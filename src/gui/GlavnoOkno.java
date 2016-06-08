@@ -28,6 +28,7 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 	private JMenuItem mntmShrani;
 	private JMenuItem mntmNastavitve;
 	private JButton btnNovo;
+	@SuppressWarnings("unused")
 	private NastavitveOkno nast;
 
 	/**
@@ -83,6 +84,7 @@ public class GlavnoOkno extends JFrame implements ActionListener{
 		gbc_btnNovo.gridy = 1;
 		btnNovo().addActionListener(this.platno);
 		contentPane.add(btnNovo, gbc_btnNovo);
+		contentPane.getRootPane().setDefaultButton(btnNovo);
 	}
 
 	

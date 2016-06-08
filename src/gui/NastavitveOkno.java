@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -271,6 +270,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_btnShrani.gridy = 7;
 		contentPane.add(btnShrani, gbc_btnShrani);
 		btnShrani.addActionListener(this);
+		contentPane.getRootPane().setDefaultButton(btnShrani);
 	}
 
 	@Override
@@ -280,12 +280,9 @@ public class NastavitveOkno implements ActionListener{
 		main.nastavitve.setEnostavneIzbire(preberiChechkboxe());
 		main.nastavitve.setKomplicirinaIzbire(preberiChechkboxk());
 		main.nastavitve.setPrah(prahBox.isSelected());
-		System.out.println(main.nastavitve.getSirina());
-		System.out.println(main.nastavitve.getVisina());
 		main.platno.ponastavi();
-		//Insets insets = main.getInsets();
-		//main.setPreferredSize(new Dimension(insets.right + insets.left + main.nastavitve.getSirina(),insets.top + insets.bottom+main.nastavitve.getVisina()));
 		main.pack();
+		main.platno.invalidate();
 		frame.dispose();
 		
 	}
