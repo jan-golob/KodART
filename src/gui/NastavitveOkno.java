@@ -224,12 +224,12 @@ public class NastavitveOkno implements ActionListener{
 		gbc_lblVodnjak.gridy = 5;
 		contentPane.add(lblVodnjak, gbc_lblVodnjak);
 		
-		chechboxik[3] = new JCheckBox("");
+		chechboxik[2] = new JCheckBox("");
 		GridBagConstraints gbc_checkBox_5 = new GridBagConstraints();
 		gbc_checkBox_5.insets = new Insets(0, 0, 5, 5);
 		gbc_checkBox_5.gridx = 1;
 		gbc_checkBox_5.gridy = 6;
-		contentPane.add(chechboxik[3], gbc_checkBox_5);
+		contentPane.add(chechboxik[2], gbc_checkBox_5);
 		
 		JLabel lblOrdinata = new JLabel("Produkt");
 		GridBagConstraints gbc_lblOrdinata = new GridBagConstraints();
@@ -252,9 +252,11 @@ public class NastavitveOkno implements ActionListener{
 		gbc_lblPrah.gridy = 6;
 		contentPane.add(lblPrah, gbc_lblPrah);
 		
+		
 		for (int i : this.main.nastavitve.getEnostavneIzbire()) {
 			chechboxie[i].setSelected(true);
 		}
+		
 		for (int i : this.main.nastavitve.getKomplicirinaIzbire()) {
 			chechboxik[i].setSelected(true);
 		}
