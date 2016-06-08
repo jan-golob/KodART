@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -274,12 +275,16 @@ public class NastavitveOkno implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		main.nastavitve.setSirina(Integer.parseInt(textField.getText()));
-		main.nastavitve.setVisina(Integer.parseInt(textField_1.getText()));
+		main.nastavitve.setSirina(nastavi_sirina(textField.getText(),main));
+		main.nastavitve.setVisina(nastavi_visina(textField_1.getText(),main));
 		main.nastavitve.setEnostavneIzbire(preberiChechkboxe());
 		main.nastavitve.setKomplicirinaIzbire(preberiChechkboxk());
 		main.nastavitve.setPrah(prahBox.isSelected());
+		System.out.println(main.nastavitve.getSirina());
+		System.out.println(main.nastavitve.getVisina());
 		main.platno.ponastavi();
+		//Insets insets = main.getInsets();
+		//main.setPreferredSize(new Dimension(insets.right + insets.left + main.nastavitve.getSirina(),insets.top + insets.bottom+main.nastavitve.getVisina()));
 		main.pack();
 		frame.dispose();
 		
@@ -335,5 +340,35 @@ public class NastavitveOkno implements ActionListener{
 			Seznam[i]=i;
 		}
 		return Seznam;
+	}
+	
+	private  int nastavi_visina(String visina, GlavnoOkno main){
+		int nova_visina;
+		try
+		{
+			nova_visina = Integer.parseInt(visina);
+		}
+		catch (NumberFormatException nfe)
+		{
+			nova_visina = main.nastavitve.getVisina();
+		}
+		
+		return nova_visina;
+		
+	}
+	
+	private  int nastavi_sirina(String sirina, GlavnoOkno main){
+		int nova_sirina;
+		try
+		{
+			nova_sirina = Integer.parseInt(sirina);
+		}
+		catch (NumberFormatException nfe)
+		{
+			nova_sirina = main.nastavitve.getSirina();
+		}
+		
+		return nova_sirina;
+		
 	}
 }
