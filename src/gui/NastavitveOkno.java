@@ -34,6 +34,7 @@ public class NastavitveOkno implements ActionListener{
 		this.chechboxie = new JCheckBox[3];
 		this.chechboxik = new JCheckBox[8];
 		frame = new JFrame();
+		frame.setTitle("Izberi svoje nastavitve!");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
 		
@@ -76,7 +77,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_lblPovprecje.gridy = 1;
 		contentPane.add(lblPovprecje, gbc_lblPovprecje);
 		
-		JLabel lblSirina = new JLabel("sirina");
+		JLabel lblSirina = new JLabel("Širina");
 		GridBagConstraints gbc_lblSirina = new GridBagConstraints();
 		gbc_lblSirina.anchor = GridBagConstraints.EAST;
 		gbc_lblSirina.insets = new Insets(0, 0, 5, 5);
@@ -122,7 +123,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_lblProdukt.gridy = 2;
 		contentPane.add(lblProdukt, gbc_lblProdukt);
 		
-		JLabel lblVisina = new JLabel("visina");
+		JLabel lblVisina = new JLabel("Višina");
 		GridBagConstraints gbc_lblVisina = new GridBagConstraints();
 		gbc_lblVisina.anchor = GridBagConstraints.EAST;
 		gbc_lblVisina.insets = new Insets(0, 0, 5, 5);
@@ -217,7 +218,7 @@ public class NastavitveOkno implements ActionListener{
 		gbc_checkBox_10.gridy = 5;
 		contentPane.add(chechboxik[7], gbc_checkBox_10);
 		
-		JLabel lblVodnjak = new JLabel("Mesanje");
+		JLabel lblVodnjak = new JLabel("Mešanje");
 		GridBagConstraints gbc_lblVodnjak = new GridBagConstraints();
 		gbc_lblVodnjak.insets = new Insets(0, 0, 5, 5);
 		gbc_lblVodnjak.gridx = 4;
@@ -275,11 +276,11 @@ public class NastavitveOkno implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		main.nastavitve.setSirina(nastavi_sirina(textField.getText(),main));
-		main.nastavitve.setVisina(nastavi_visina(textField_1.getText(),main));
 		main.nastavitve.setEnostavneIzbire(preberiChechkboxe());
 		main.nastavitve.setKomplicirinaIzbire(preberiChechkboxk());
 		main.nastavitve.setPrah(prahBox.isSelected());
+		main.nastavitve.setSirina(nastavi_sirina(textField.getText(),main));
+		main.nastavitve.setVisina(nastavi_visina(textField_1.getText(),main));
 		main.platno.ponastavi();
 		main.pack();
 		main.platno.invalidate();
@@ -362,12 +363,15 @@ public class NastavitveOkno implements ActionListener{
 	private  int nastavi_sirina(String sirina, GlavnoOkno main){
 		int nova_sirina;
 		try
-		{
+		{	
 			nova_sirina = Integer.parseInt(sirina);
 		}
 		catch (NumberFormatException nfe)
 		{
 			nova_sirina = main.nastavitve.getSirina();
+		}
+		if(sirina.equals("Bauer")){
+			main.nastavitve.setPrah(true);
 		}
 		
 		if (nova_sirina < 2000){

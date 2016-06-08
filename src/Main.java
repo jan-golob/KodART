@@ -1,6 +1,6 @@
 import gui.GlavnoOkno;
 
-public class Test {
+public class Main {
 
 	public static void main(String[] args) {
 		GlavnoOkno okno = new GlavnoOkno();
