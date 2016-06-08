@@ -270,7 +270,6 @@ public class NastavitveOkno implements ActionListener{
 		gbc_btnShrani.gridy = 7;
 		contentPane.add(btnShrani, gbc_btnShrani);
 		btnShrani.addActionListener(this);
-		btnShrani.addActionListener(main);
 	}
 
 	@Override
