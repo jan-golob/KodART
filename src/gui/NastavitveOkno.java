@@ -350,7 +350,12 @@ public class NastavitveOkno implements ActionListener{
 			nova_visina = main.nastavitve.getVisina();
 		}
 		
+		if (nova_visina < 2000){
 		return nova_visina;
+		}
+		else{
+			return 2000;
+		}
 		
 	}
 	
@@ -365,7 +370,12 @@ public class NastavitveOkno implements ActionListener{
 			nova_sirina = main.nastavitve.getSirina();
 		}
 		
+		if (nova_sirina < 2000){
 		return nova_sirina;
+		}
+		else{
+			return 2000;
+		}
 		
 	}
 }
